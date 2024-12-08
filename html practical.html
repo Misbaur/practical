@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Practical</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .content {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .html-codes {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            color: #333;
+        }
+        .paragraph {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .links a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+		.nav-buttons 
+		{
+           
+            margin-top: 20px;
+        }
+        .nav-buttons a {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .nav-buttons a:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Practical</h1>
+    </header>
+
+    <div class="content">
+        <!-- HTML Codes Section -->
+        <!-- Basic HTML Info Section -->
+        <div class="paragraph">
+            <h2>What is HTML?</h2>
+            <p>HTML (Hypertext Markup Language) is the standard language used to create and design webpages. It is the backbone of any website. By using tags like <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code>, HTML defines the structure of a webpage.</p>
+            <p>To write HTML code, you can use any text editor. You can use simple editors like Notepad (Windows) or TextEdit (Mac), or more advanced code editors like Visual Studio Code or Sublime Text.</p>
+            <p><strong>Steps to Write and Open HTML Code:</strong></p>
+            <ul>
+                <li>Open a text editor.</li>
+                <li>Write your HTML code.</li>
+                <li>Save the file with a <code>.html</code> extension.</li>
+                <li>Open the file in any web browser to view the output.</li>
+            </ul>
+            <p>To view the output of your HTML code, simply double-click on the saved <code>.html</code> file, and it will open in your default web browser.</p>
+            <p>For more detailed information, you can refer to the following YouTube tutorials:</p>
+            <div class="links">
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=UB1O30fR-EE" target="_blank">How to Write HTML Code (YouTube Tutorial)</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=nyz3gD8iMCQ" target="_blank">How to Save HTML File (YouTube Tutorial)</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=5OGJKgmB09s" target="_blank">How to Open HTML File (YouTube Tutorial)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- HTML Editors Section -->
+        <div class="paragraph">
+            <h2>HTML Editing Software</h2>
+            <p>There are several free and easy-to-use HTML editors available online. Some popular options are:</p>
+            <ul class="links">
+                <li><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
+                <li><a href="https://www.sublimetext.com/" target="_blank">Sublime Text</a></li>
+                <li><a href="https://www.notepad-plus-plus.org/" target="_blank">Notepad++</a></li>
+                <li><a href="https://brackets.io/" target="_blank">Brackets</a></li>
+            </ul>
+        </div>
+		        <div class="html-codes">
+            <h2>HTML Code</h2>
+			<p>Here are the codes, Just copy-past these codes into your editor and run the program. If you face any problem runnig the code feel free to contact me</p>
+            
+            <h3>Code 1: Background Image</h3>
+            <pre>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Backround Image&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body background="clear this txt and add path of your picture"&gt;
+        &lt;h3&gt;Look! A background Image! &lt;/h3&gt;
+        &lt;p&gt;both git and jpg can be used as background image&lt;/p&gt;
+        &lt;p&gt;if the image is smaller than the page, the image will repeat itself&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+
+            <h3>Code 2: Adding an Image</h3>
+            <pre>
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Adding an Image&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h3&gt;The following image is added to this webpage.&lt;/h3&gt;
+    &lt;img src="clear this txt and add path of your picture" alt="Flag of Bangladesh" height="200" wider="300"&gt;
+    &lt;h3&gt;The following image is added to this website from another webpage.&lt;/h3&gt;
+    &lt;img src="clear this txt and add path of your picture" alt="Jatiyo Sangsad Bhaban"&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+
+            <h3>Code 3: Presenting List in HTML</h3>
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;title&gt;Presenting List in HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Unordered list of the division of Bangladesh&lt;/h1&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Barisal&lt;/li&gt;
+        &lt;li&gt;Chittagong&lt;/li&gt;
+        &lt;li&gt;Dhaka&lt;/li&gt;
+        &lt;li&gt;Mymensingh&lt;/li&gt;
+        &lt;li&gt;Khulna&lt;/li&gt;
+        &lt;li&gt;Rajshahi&lt;/li&gt;
+        &lt;li&gt;Rangpur&lt;/li&gt;
+        &lt;li&gt;Sylhet&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;h1&gt;Ordered list of division of Bangladesh&lt;/h1&gt;
+    &lt;ol&gt;
+        &lt;li&gt;Barisal&lt;/li&gt;
+        &lt;li&gt;Chittagong&lt;/li&gt;
+        &lt;li&gt;Dhaka&lt;/li&gt;
+        &lt;li&gt;Mymensingh&lt;/li&gt;
+        &lt;li&gt;Khulna&lt;/li&gt;
+        &lt;li&gt;Rajshahi&lt;/li&gt;
+        &lt;li&gt;Rangpur&lt;/li&gt;
+        &lt;li&gt;Sylhet&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;ol type="A"&gt;
+        &lt;li&gt;Barisal&lt;/li&gt;
+        &lt;li&gt;Chittagong&lt;/li&gt;
+        &lt;li&gt;Dhaka&lt;/li&gt;
+        &lt;li&gt;Mymensingh&lt;/li&gt;
+        &lt;li&gt;Khulna&lt;/li&gt;
+        &lt;li&gt;Rajshahi&lt;/li&gt;
+        &lt;li&gt;Rangpur&lt;/li&gt;
+        &lt;li&gt;Sylhet&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+
+            <h3>Code 4: Paragraph Formatting</h3>
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Paragraph Formatting&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;This is a normal paragraph. This paragraph does not use any alignment.&lt;br&gt;
+    And this is a new line inside the paragraph.&lt;/p&gt;
+    &lt;p style="text-align: left;"&gt;This is a left aligned paragraph.&lt;br&gt;
+    And this is a new line inside the paragraph.&lt;/p&gt;
+
+    &lt;p style="text-align: center;"&gt;This is a center aligned paragraph.&lt;br&gt;
+    And this is a new line inside the paragraph.&lt;/p&gt;
+    &lt;p style="text-align: right;"&gt;This is a right aligned paragraph.&lt;br&gt;
+    And this is a new line inside the paragraph.&lt;/p&gt;
+    &lt;p style="text-align: justify;"&gt;This is a justify aligned paragraph.&lt;br&gt;
+    And this is a new line inside the paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+
+            <h3>Code 5: Exam Marks Table</h3>
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Exam marks table&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Exam results in tabular format&lt;/h1&gt;
+    &lt;table border="5"&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Exam marks&lt;/th&gt;
+            &lt;th&gt;Grade&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Ashik Ahmad&lt;/td&gt;
+            &lt;td&gt;62&lt;/td&gt;
+            &lt;td&gt;A-&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Forhad Reza&lt;/td&gt;
+            &lt;td&gt;87&lt;/td&gt;
+            &lt;td&gt;A+&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Alamgir Khan&lt;/td&gt;
+            &lt;td&gt;78&lt;/td&gt;
+            &lt;td&gt;A&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+
+            <h3>Code 6: HTML Formatting</h3>
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;HTML formatting&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Examples of HTML formatting&lt;/h1&gt;
+    &lt;p&gt;&lt;b&gt;Bold&lt;/b&gt; - This is an example of bold.&lt;/p&gt;
+    &lt;p&gt;&lt;i&gt;Italic&lt;/i&gt; - This is an example of italic.&lt;/p&gt;
+    &lt;p&gt;&lt;u&gt;Underline&lt;/u&gt; - This is an example of underline.&lt;/p&gt;
+    &lt;p&gt;&lt;s&gt;Strike&lt;/s&gt; - This is an example of strike.&lt;/p&gt;
+    &lt;p&gt;E=mc&lt;sup&gt;2&lt;/sup&gt; - This is an example of superscript.&lt;/p&gt;
+    &lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O - This is an example of subscript.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;strong&lt;/strong&gt; - This is an example of strong.&lt;/p&gt;
+    &lt;p&gt;&lt;mark&gt;Mark&lt;/mark&gt; - This is an example of Mark.&lt;/p&gt;
+    &lt;p&gt;&lt;code&gt;Code&lt;/code&gt; - This is an example of code.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+
+            <h3>Code 7: Adding your own image in a table</h3>
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;table align="center" width="31%" height="100px" border="3px" rules="none"&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;Govt.Sundarban Adarsha College, Khulna&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td align="center"&gt;&lt;clear this and write your name&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td align="center"&gt;&lt;clear this and write your roll number&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td align="center"&gt;&lt;img src="clear this txt and add image path" alt="" height="200px" width="170px"&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </div>
+    <div class="nav-buttons">
+        <a href="index.html">HOME</a>
+        <!-- Alternatively, you could replace 'index.html' with the desired home page URL -->
+    </div>
+    </div>
+    <footer>
+        <p>If you need any help, feel free to contact me:</p>
+        <div>
+            <a href="https://www.facebook.com/mdmisbaur.rahman.5203" target="_blank"><img src="fb.jpg" alt"Facebook" style="width:20px; height:20px; margin-right:8px;"></a>
+            <a href="https://www.instagram.com/_m.a.r.s_9105/" target="_blank"><img src="insta.jpg" alt="Instagram" style="width:20px; height:20px; margin-right:10px;"></a>
+            <a href="mailto:cyberhunter9105@gmail.com" target="_blank"><img src="mail.png" alt="Email" style="width:20px; height:20px;"></a>
+        </div>
+		<p>&copy; 2024 Practical Guide | All Rights Reserved</p>
+        <footer>
+</body>
+</html>
