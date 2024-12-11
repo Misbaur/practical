@@ -5,8 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C Programming Practical</title>
+	<link rel="stylesheet" href="c.css">
     <style>
         body {
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -55,21 +60,21 @@
             color: white;
             margin-top: 20px;
         }
-		.nav-buttons 
+        .nav-buttons 
 		{
-            
+           
             margin-top: 20px;
         }
         .nav-buttons a {
             padding: 10px 20px;
             margin: 10px;
-            background-color: #28a745;
+            background-color: #218838;
             color: white;
             text-decoration: none;
             border-radius: 5px;
         }
         .nav-buttons a:hover {
-            background-color: #007BFF;
+            background-color: #065317;
         }
 	pre {
         white-space: pre-wrap; /* Wrap code if needed */
@@ -122,12 +127,26 @@
 </head>
 <body>
     <header>
+		    <div class="menu-container">
+        <button class="menu-btn" onclick="toggleNav()">☰</button>
+        <span class="menu-title">Menu</span>
+    </div>
+
+    <!-- Side Navigation -->
+    <div class="sidenav" id="sidenav">
+        <a href="index.html">Home</a>
+        <a href="HTML.html" onclick="closeNavAndScrollTo('#contact')">HTML</a>
+        <a href="#cc" onclick="closeNavAndScrollTo('#contact')">C Practical</a>
+        <a href="#practical-list">Practical List</a>
+        <a href="#contact" onclick="closeNavAndScrollTo('#contact')">Contact Us</a>
+    </div><br>
+	
         <h1>C Programming Practical</h1>
     </header>
 
     <div class="content">
         <!-- Basic C Info Section -->
-        <div class="paragraph">
+        <div class="paragraph" id="cc">
             <h2>What is C Programming?</h2>
             <p>C is a general-purpose, high-level programming language used for system and application software. It’s widely used for developing operating systems, databases, and embedded systems. To write C programs, you need to use a C compiler, which translates the code into machine language.</p>
             <p><strong>Steps to Write and Open C Code:</strong></p>
@@ -182,7 +201,7 @@
             <!-- C Code 1 Placeholder -->
             <h3>Code 1</h3><P>sum of 1+2+3+4...........N</P>
 						<div class="code-box">
-			<button class="copy-button" onclick="copyCode()">Copy</button>
+			<button class="copy-button" onclick="copyCode(this)">Copy</button>
             <pre id="code-content">
 #include&lt;stdio.h&gt;
 int main()
@@ -206,7 +225,7 @@ return 0;
             <!-- C Code 2 Placeholder -->
             <h3>Code 2</h3><P>sum of all the even numbers from 1 to 100</P>
 						<div class="code-box">
-			<button class="copy-button" onclick="copyCode()">Copy</button>
+			<button class="copy-button" onclick="copyCode(this)">Copy</button>
             <pre id="code-content">
 #include&lt;stdio.h&gt;
 int main()
@@ -225,7 +244,7 @@ return 0;
             <!-- C Code 3 Placeholder -->
             <h3>Code 3</h3><p>calculating GCD of 2 numbers</p>
 						<div class="code-box">
-			<button class="copy-button" onclick="copyCode()">Copy</button>
+			<button class="copy-button" onclick="copyCode(this)">Copy</button>
             <pre id="code-content">
 #include&lt;stdio.h&gt;
 int main()
@@ -255,7 +274,7 @@ return 0;
             <!-- C Code 4 Placeholder -->
             <h3>Code 4</h3><p>factorial</p>
 						<div class="code-box">
-			<button class="copy-button" onclick="copyCode()">Copy</button>
+			<button class="copy-button" onclick="copyCode(this)">Copy</button>
             <pre id="code-content">
 #include&lt;stdio.h&gt;
 int main()
@@ -280,7 +299,7 @@ return 0;
             <!-- C Code 5 Placeholder -->
             <h3>Code 5</h3><p>fibonnaci series</p>
 						<div class="code-box">
-			<button class="copy-button" onclick="copyCode()">Copy</button>
+			<button class="copy-button" onclick="copyCode(this)">Copy</button>
             <pre id="code-content">
 #include &lt;stdio.h&gt;
 int fibonacci (int);
@@ -318,16 +337,50 @@ return (fibonacci(n-1) + fibonacci(n-2));
     </div>
     </div>
 		<script>
-        function copyCode() {
-            const codeContent = document.getElementById('code-content').innerText;
-            navigator.clipboard.writeText(codeContent).then(() => {
-                alert('Code copied to clipboard!');
-            }).catch(() => {
-                alert('Failed to copy the code.');
-            });
+			function copyCode(button) {
+    const codeContent = document.getElementById('code-content').innerText;
+    navigator.clipboard.writeText(codeContent).then(() => {
+        button.innerText = 'Copied!';
+        button.disabled = true; // Disable the button temporarily
+        setTimeout(() => {
+            button.innerText = 'Copy';
+            button.disabled = false; // Re-enable the button
+        }, 2000); // Reset after 2 seconds
+    }).catch(() => {
+        button.innerText = 'Failed to copy';
+    });
+}
+		
+		function toggleNav() {
+            const sidenav = document.getElementById('sidenav');
+            const body = document.body;
+            sidenav.classList.toggle('active');
+            body.classList.toggle('blur');
         }
+
+        function closeNavAndScrollTo(target) {
+            const sidenav = document.getElementById('sidenav');
+            const body = document.body;
+            sidenav.classList.remove('active');
+            body.classList.remove('blur');
+            document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Smooth scroll for links except Contact Us
+        document.querySelectorAll('.sidenav a:not([onclick])').forEach(link => {
+            link.addEventListener('click', function (e) {
+                if (this.hash) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.hash);
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        document.addEventListener('contextmenu', function(e) {
+        e.preventDefault(); // Prevent the default right-click menu
+    })
     </script>
-    <footer>
+    <footer id="contact">
         <p>If you need any help, feel free to contact me:</p>
         <div>
             <a href="https://www.facebook.com/mdmisbaur.rahman.5203" target="_blank"><img src="fb.jpg" alt="Facebook" style="width:20px; height:20px; margin-right:8px;"></a>
