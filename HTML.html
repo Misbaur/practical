@@ -4,127 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Practical</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #007BFF;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-        .content {
-            max-width: 1000px;
-            margin: 20px auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .html-codes {
-            background-color: #f0f0f0;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            white-space: pre-wrap;
-            font-family: monospace;
-            color: #333;
-        }
-        .paragraph {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        .links a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-        .links a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            margin-top: 20px;
-        }
-		.nav-buttons 
-		{
-           
-            margin-top: 20px;
-        }
-        .nav-buttons a {
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .nav-buttons a:hover {
-            background-color: #218838;
-        }
-	pre {
-        white-space: pre-wrap; /* Wrap code if needed */
-        word-wrap: break-word; /* Break long lines */
-        overflow-x: auto; /* Add horizontal scrolling for long code */
-        background-color: #f4f4f4; /* Optional: Code block background */
-        padding: 10px; /* Optional: Code block padding */
-        border-radius: 5px; /* Optional: Rounded corners */
-        }
-
-    @media (max-width: 768px) {
-        pre {
-            font-size: 14px; /* Reduce font size for small screens */
-        }
-    }
-	.code-box {
-            position: relative;
-            background-color: #282c34;
-            border-radius: 8px;
-            padding: 16px;
-            color: #000;
-            font-family: "Fira Code", "Consolas", monospace;
-            font-size: 14px;
-            line-height: 1.6;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow-x: auto;
-        }
-        .copy-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #007bff;
-            color: #ffffff;
-            border: none;
-            padding: 6px 12px;
-            font-size: 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .copy-button:hover {
-            background-color: #0056b3;
-        }
-        pre {
-            margin: 0;
-            white-space: pre-wrap;
-            word-break: break-word;
-        }
-    </style>
+	<link rel="stylesheet" href="html.css">
 </head>
 <body>
     <header>
+		    <div class="menu-container">
+        <button class="menu-btn" onclick="toggleNav()">☰</button>
+        <span class="menu-title">Menu</span>
+    </div>
+
+    <!-- Side Navigation -->
+    <div class="sidenav" id="sidenav">
+        <a href="index.html">Home</a>
+        <a href="#bb" onclick="closeNavAndScrollTo('#contact')">HTML</a>
+        <a href="C program.html" onclick="closeNavAndScrollTo('#contact')">C Practical</a>
+        <a href="#practical-list">Practical List</a>
+        <a href="#contact" onclick="closeNavAndScrollTo('#contact')">Contact Us</a>
+    </div><br>
         <h1>HTML Practical</h1>
     </header>
 
-    <div class="content">
+    <div class="content" id="bb">
         <!-- HTML Codes Section -->
         <!-- Basic HTML Info Section -->
         <div class="paragraph">
@@ -166,7 +66,7 @@
             
             <h3>Code 1: Background Image</h3>
 			<div class="code-box">
-			<button class="copy-button" onclick="copyCode()">Copy</button>
+			<button class="copy-button" onclick="copyCode(this)">Copy</button>
             <pre id="code-content">
 &lt;html&gt;
     &lt;head&gt;
@@ -183,7 +83,7 @@
 
             <h3>Code 2: Adding an Image</h3>
 			<div class="code-box">
-			<button class="copy-button" onclick="copyCode()">Copy</button>
+			<button class="copy-button" onclick="copyCode(this)">Copy</button>
             <pre id="code-content">
 &lt;html&gt;
 &lt;head&gt;
@@ -201,7 +101,7 @@
 
             <h3>Code 3: Presenting List in HTML</h3>
 			<div class="code-box">
-			<button class="copy-button" onclick="copyCode()">Copy</button>
+			<button class="copy-button" onclick="copyCode(this)">Copy</button>
             <pre id="code-content">
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
@@ -248,7 +148,7 @@
 
             <h3>Code 4: Paragraph Formatting</h3>
 			<div class="code-box">
-			<button class="copy-button" onclick="copyCode()">Copy</button>
+			<button class="copy-button" onclick="copyCode(this)">Copy</button>
             <pre id="code-content">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -274,7 +174,7 @@
 
             <h3>Code 5: Exam Marks Table</h3>
 			<div class="code-box">
-			<button class="copy-button" onclick="copyCode()">Copy</button>
+			<button class="copy-button" onclick="copyCode(this)">Copy</button>
             <pre id="code-content">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -312,7 +212,7 @@
 
             <h3>Code 6: HTML Formatting</h3>
 			<div class="code-box">
-			<button class="copy-button" onclick="copyCode()">Copy</button>
+			<button class="copy-button" onclick="copyCode(this)">Copy</button>
             <pre id="code-content">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -337,7 +237,7 @@
 
             <h3>Code 7: Adding your own image in a table</h3>
 			<div class="code-box">
-			<button class="copy-button" onclick="copyCode()">Copy</button>
+			<button class="copy-button" onclick="copyCode(this)">Copy</button>
             <pre id="code-content">
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
@@ -372,20 +272,53 @@
         </div>
     <div class="nav-buttons">
         <a href="index.html">HOME</a>
-        <!-- Alternatively, you could replace 'index.html' with the desired home page URL -->
     </div>
     </div>
 	<script>
-        function copyCode() {
-            const codeContent = document.getElementById('code-content').innerText;
-            navigator.clipboard.writeText(codeContent).then(() => {
-                alert('Code copied to clipboard!');
-            }).catch(() => {
-                alert('Failed to copy the code.');
-            });
+	function copyCode(button) {
+    const codeContent = document.getElementById('code-content').innerText;
+    navigator.clipboard.writeText(codeContent).then(() => {
+        button.innerText = 'Copied!';
+        button.disabled = true; // Disable the button temporarily
+        setTimeout(() => {
+            button.innerText = 'Copy';
+            button.disabled = false; // Re-enable the button
+        }, 2000); // Reset after 2 seconds
+    }).catch(() => {
+        button.innerText = 'Failed to copy';
+    });
+}
+
+					        function toggleNav() {
+            const sidenav = document.getElementById('sidenav');
+            const body = document.body;
+            sidenav.classList.toggle('active');
+            body.classList.toggle('blur');
         }
+
+        function closeNavAndScrollTo(target) {
+            const sidenav = document.getElementById('sidenav');
+            const body = document.body;
+            sidenav.classList.remove('active');
+            body.classList.remove('blur');
+            document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Smooth scroll for links except Contact Us
+        document.querySelectorAll('.sidenav a:not([onclick])').forEach(link => {
+            link.addEventListener('click', function (e) {
+                if (this.hash) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.hash);
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+		        document.addEventListener('contextmenu', function(e) {
+        e.preventDefault(); // Prevent the default right-click menu
+    })
     </script>
-    <footer>
+    <footer id="contact">
         <p>If you need any help, feel free to contact me:</p>
         <div>
             <a href="https://www.facebook.com/mdmisbaur.rahman.5203" target="_blank"><img src="fb.jpg" alt"Facebook" style="width:20px; height:20px; margin-right:8px;"></a>
