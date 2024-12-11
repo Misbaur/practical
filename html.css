@@ -1,0 +1,234 @@
+        body {
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .content {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .html-codes {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            color: #333;
+        }
+        .paragraph {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .links a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+		.nav-buttons 
+		{
+           
+            margin-top: 20px;
+        }
+        .nav-buttons a {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .nav-buttons a:hover {
+            background-color: #122b72;
+        }
+	pre {
+        white-space: pre-wrap; /* Wrap code if needed */
+        word-wrap: break-word; /* Break long lines */
+        overflow-x: auto; /* Add horizontal scrolling for long code */
+        background-color: #f4f4f4; /* Optional: Code block background */
+        padding: 10px; /* Optional: Code block padding */
+        border-radius: 5px; /* Optional: Rounded corners */
+        }
+
+    @media (max-width: 768px) {
+        pre {
+            font-size: 14px; /* Reduce font size for small screens */
+        }
+    }
+	.code-box {
+            position: relative;
+            background-color: #282c34;
+            border-radius: 8px;
+            padding: 16px;
+            color: #000;
+            font-family: "Fira Code", "Consolas", monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+        }
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 6px 12px;
+            font-size: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .copy-button:hover {
+            background-color: #0056b3;
+        }
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+		
+		        .sidenav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            padding-top: 60px; /* Adjusted to account for menu container */
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        .sidenav.active {
+            transform: translateX(0);
+        }
+
+        .sidenav a {
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: background 0.3s, padding-left 0.3s;
+        }
+
+        .sidenav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            padding-left: 30px;
+        }
+
+        /* Hamburger Menu */
+        .menu-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #0078FF;
+            padding: 10px;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-btn {
+            color: white;
+            font-size: 24px;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .menu-title {
+            margin-left: 20px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 700px) {
+            .sidenav {
+                width: 100%;
+                padding-top: 50px;
+            }
+
+            .sidenav a {
+                font-size: 16px;
+                text-align: center;
+            }
+
+            .menu-btn {
+                font-size: 20px;
+            }
+        }
+
+        /* Content Area */
+        .content {
+            margin-left: 0;
+            padding: 20px;
+            transition: margin-left 0.3s ease-in-out;
+        }
+
+        .sidenav.active ~ .content {
+            margin-left: 250px;
+        }
+
+        @media (max-width: 768px) {
+            .sidenav.active ~ .content {
+                margin-left: 0;
+            }
+        }
+
+        .section {
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        /* Blur effect when menu is open */
+        body.blur {
+            overflow: hidden;
+        }
+
+        body.blur::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            z-index: 999;
+        }
