@@ -194,13 +194,6 @@
             }
         }
 
-        /* Content Area */
-        .content {
-            margin-left: 0;
-            padding: 20px;
-            transition: margin-left 0.3s ease-in-out;
-        }
-
         .sidenav.active ~ .content {
             margin-left: 250px;
         }
