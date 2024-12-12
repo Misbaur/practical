@@ -106,7 +106,7 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background-color: #007bff;
+            background-color: #28a745;
             color: #ffffff;
             border: none;
             padding: 6px 12px;
@@ -116,7 +116,7 @@
             transition: background-color 0.3s ease;
         }
         .copy-button:hover {
-            background-color: #0056b3;
+            background-color: #0d7726;
         }
         pre {
             margin: 0;
@@ -201,8 +201,8 @@
             <!-- C Code 1 Placeholder -->
             <h3>Code 1</h3><P>sum of 1+2+3+4...........N</P>
 						<div class="code-box">
-			<button class="copy-button" onclick="copyCode(this)">Copy</button>
-            <pre id="code-content">
+			<button class="copy-button" data-target="c1">Copy</button>
+            <pre id="c1">
 #include&lt;stdio.h&gt;
 int main()
 {
@@ -225,8 +225,8 @@ return 0;
             <!-- C Code 2 Placeholder -->
             <h3>Code 2</h3><P>sum of all the even numbers from 1 to 100</P>
 						<div class="code-box">
-			<button class="copy-button" onclick="copyCode(this)">Copy</button>
-            <pre id="code-content">
+			<button class="copy-button" data-target="c2">Copy</button>
+            <pre id="c2">
 #include&lt;stdio.h&gt;
 int main()
 {
@@ -244,8 +244,8 @@ return 0;
             <!-- C Code 3 Placeholder -->
             <h3>Code 3</h3><p>calculating GCD of 2 numbers</p>
 						<div class="code-box">
-			<button class="copy-button" onclick="copyCode(this)">Copy</button>
-            <pre id="code-content">
+			<button class="copy-button" data-target="c3">Copy</button>
+            <pre id="c3">
 #include&lt;stdio.h&gt;
 int main()
 {
@@ -274,8 +274,8 @@ return 0;
             <!-- C Code 4 Placeholder -->
             <h3>Code 4</h3><p>factorial</p>
 						<div class="code-box">
-			<button class="copy-button" onclick="copyCode(this)">Copy</button>
-            <pre id="code-content">
+			<button class="copy-button" data-target="c4">Copy</button>
+            <pre id="c4">
 #include&lt;stdio.h&gt;
 int main()
 
@@ -299,8 +299,8 @@ return 0;
             <!-- C Code 5 Placeholder -->
             <h3>Code 5</h3><p>fibonnaci series</p>
 						<div class="code-box">
-			<button class="copy-button" onclick="copyCode(this)">Copy</button>
-            <pre id="code-content">
+			<button class="copy-button" data-target="c5">Copy</button>
+            <pre id="c5">
 #include &lt;stdio.h&gt;
 int fibonacci (int);
 int main()
@@ -337,20 +337,30 @@ return (fibonacci(n-1) + fibonacci(n-2));
     </div>
     </div>
 		<script>
-			function copyCode(button) {
-    const codeContent = document.getElementById('code-content').innerText;
-    navigator.clipboard.writeText(codeContent).then(() => {
-        button.innerText = 'Copied!';
-        button.disabled = true; // Disable the button temporarily
+                    document.addEventListener('click', function (event) {
+  if (event.target.classList.contains('copy-button')) {
+    const targetId = event.target.getAttribute('data-target');
+    const preElement = document.getElementById(targetId);
+
+    if (preElement) {
+      const textToCopy = preElement.textContent;
+
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        // Change the button text to "Copied!"
+        const originalText = event.target.textContent;
+        event.target.textContent = "Copied!";
+
+        // Reset the button text after 2 seconds
         setTimeout(() => {
-            button.innerText = 'Copy';
-            button.disabled = false; // Re-enable the button
-        }, 2000); // Reset after 2 seconds
-    }).catch(() => {
-        button.innerText = 'Failed to copy';
-    });
-}
-		
+          event.target.textContent = originalText;
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy text: ', err);
+      });
+    }
+  }
+});
+
 		function toggleNav() {
             const sidenav = document.getElementById('sidenav');
             const body = document.body;
