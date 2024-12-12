@@ -65,7 +65,7 @@
 			<p>Here are the codes, Just copy-past these codes into your editor and run the program. If you face any problem runnig the code feel free to contact me</p>
             
             <h3>Code 1: Background Image</h3>
-			<div class="code-box">
+			<div class="code-1">
 			<button class="copy-button" onclick="copyCode(this)">Copy</button>
             <pre id="code-content">
 &lt;html&gt;
@@ -84,7 +84,7 @@
             <h3>Code 2: Adding an Image</h3>
 			<div class="code-box">
 			<button class="copy-button" onclick="copyCode(this)">Copy</button>
-            <pre id="code-content">
+            <pre id="code-2">
 &lt;html&gt;
 &lt;head&gt;
     &lt;title&gt;Adding an Image&lt;/title&gt;
@@ -100,7 +100,7 @@
 			</div>
 
             <h3>Code 3: Presenting List in HTML</h3>
-			<div class="code-box">
+			<div class="code-3">
 			<button class="copy-button" onclick="copyCode(this)">Copy</button>
             <pre id="code-content">
 &lt;!DOCTYPE html&gt;
@@ -147,7 +147,7 @@
 			</div>
 
             <h3>Code 4: Paragraph Formatting</h3>
-			<div class="code-box">
+			<div class="code-4">
 			<button class="copy-button" onclick="copyCode(this)">Copy</button>
             <pre id="code-content">
 &lt;!DOCTYPE html&gt;
@@ -173,7 +173,7 @@
 			</div>
 
             <h3>Code 5: Exam Marks Table</h3>
-			<div class="code-box">
+			<div class="code-5">
 			<button class="copy-button" onclick="copyCode(this)">Copy</button>
             <pre id="code-content">
 &lt;!DOCTYPE html&gt;
@@ -211,7 +211,7 @@
 			</div>
 
             <h3>Code 6: HTML Formatting</h3>
-			<div class="code-box">
+			<div class="code-6">
 			<button class="copy-button" onclick="copyCode(this)">Copy</button>
             <pre id="code-content">
 &lt;!DOCTYPE html&gt;
@@ -235,8 +235,8 @@
             </pre>
 			</div>
 
-            <h3>Code 7: Adding your own image in a table</h3>
-			<div class="code-box">
+            <h3>Code 7: Adding your own image in a table (for sundarban college students)</h3>
+			<div class="code-7">
 			<button class="copy-button" onclick="copyCode(this)">Copy</button>
             <pre id="code-content">
 &lt;!DOCTYPE html&gt;
@@ -275,17 +275,20 @@
     </div>
     </div>
 	<script>
-	function copyCode(button) {
-    const codeContent = document.getElementById('code-content').innerText;
+	function copyCode(codeId, button) {
+    const codeContent = document.getElementById(codeId).innerText;
     navigator.clipboard.writeText(codeContent).then(() => {
-        button.innerText = 'Copied!';
-        button.disabled = true; // Disable the button temporarily
+        // Change the button text to "Copied"
+        button.innerText = "Copied!";
+        button.disabled = true; // Temporarily disable the button
+        
+        // Reset the button text after 2 seconds
         setTimeout(() => {
-            button.innerText = 'Copy';
-            button.disabled = false; // Re-enable the button
-        }, 2000); // Reset after 2 seconds
+            button.innerText = "Copy";
+            button.disabled = false;
+        }, 2000);
     }).catch(() => {
-        button.innerText = 'Failed to copy';
+        button.innerText = "Failed!";
     });
 }
 
